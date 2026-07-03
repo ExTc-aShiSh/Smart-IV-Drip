@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart IV Drip Monitoring System</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/mqtt/dist/mqtt.min.js"></script>
+
+</head>
+
+<body>
+    <div class="dashboard-container">
+        <header class="header">
+            <div class="logo-icon">💧</div>
+            <h1>Smart IV drip Monitoring System</h1>
+            <p class="subtitle">Real-time Healthcare Analytics & Patient Monitoring</p>
+        </header>
+
+        <div class="content-wrapper">
+            <div class="card metric-card">
+                <div class="card-header">
+                    <h2>Live Drip Status</h2>
+                    <span class="icon">⚕️</span>
+                </div>
+                <div class="metric-body">
+                    <div id="weight">0.00 g</div>
+                    <div id="status">🔴 Offline</div>
+                </div>
+            </div>
+
+            <div class="card chart-card" id="bottle-card">
+                <div class="card-header">
+                    <h2>Fluid Level</h2>
+                    <span class="icon">💧</span>
+                </div>
+                <div class="bottle-container">
+                    <div class="bottle">
+                        <div class="fluid" id="fluid-level" style="height: 100%;"></div>
+                        <div class="bottle-glare"></div>
+                        <div class="bottle-marks">
+                            <span>100%</span>
+                            <span>75%</span>
+                            <span>50%</span>
+                            <span>25%</span>
+                        </div>
+                    </div>
+                </div>
+                <div id="alarm-status" class="alarm-status hidden">⚠️ LOW FLUID ALARM!</div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
